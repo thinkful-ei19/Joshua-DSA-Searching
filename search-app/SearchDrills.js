@@ -177,3 +177,21 @@ arr.forEach(item=> BST.insert(item));
 //BST.inOrderTraversal();
 //BST.postOrderTraversal();
 
+function bestProfit(prices) {
+  if (!prices.length) return 0;
+ 
+  let buy = prices[0];
+  let sell = prices[0];
+  let profit = 0;
+  for (var i = 1; i < prices.length; ++i) {
+    sell = prices[i];
+    console.log('this is sell', sell);
+    if (sell < buy) buy = sell;
+    console.log('this is buy', buy);
+    if (sell - buy > profit) profit = sell - buy;
+    console.log('this is profit', profit);
+  }
+  return profit;
+}
+
+console.log(bestProfit([128, 97, 121, 123, 98, 97, 105]));
