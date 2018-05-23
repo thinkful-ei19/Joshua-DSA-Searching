@@ -14,7 +14,7 @@ export default class BinarySearch extends React.Component {
         let message = null;
         count++;
         if (start > end) {
-            message = index;
+            message = 'Not here';
         }    
         const index = Math.floor((start + end) / 2);
         if(arr[index] === value){
@@ -32,7 +32,7 @@ export default class BinarySearch extends React.Component {
         }
         if(arr[index] > value) {
             return this.binarySearch(arr, value, start, index - 1, count);
-        }
+        } 
     }
 
 
